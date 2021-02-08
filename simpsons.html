@@ -42,7 +42,7 @@
 			crossorigin="anonymous"
 		></script>
 		<script>// This function loads simpson data from the Simpsons API
-            function fetchSimpsonsJSON() {
+            function fetchSimpsons() {
             
                 const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
                 axios.get(url)
@@ -57,12 +57,13 @@
                       <p><strong>${simpson.character}</strong></p>
                       <img src="${simpson.image}" />
                       <p>${simpson.quote}</p>
+					  <button type="button" onClick={fetchSimpsons()}>Reload</button>
                     `;
                     document.getElementById('simpson').innerHTML = simpsonHtml;
                   });
               }
               
-              fetchSimpsonsJSON();
+              fetchSimpsons();
               </script>
 	</body>
 </html>
